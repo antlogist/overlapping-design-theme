@@ -1,3 +1,3 @@
-<?php
+<?php wp_head(); ?>
 
-  wp_head();
+<body <?php body_class() ?>>
