@@ -11,4 +11,6 @@ function overlap_theme_support() {
   
   //Document title tag support
   add_theme_support( "title-tag" );
+  
+  add_theme_support("menus");
 }
