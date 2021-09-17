@@ -7,7 +7,6 @@ if ( ! defined ("ABSPATH") ) {
 
 ?>
 
-
 <!DOCTYPE html>
 
 <html <?php language_attributes(); ?>>
@@ -16,4 +15,4 @@ if ( ! defined ("ABSPATH") ) {
 
 wp_head(); ?>
 
-<body <?php body_class() ?>>
+<body <?php body_class(); ?>>
