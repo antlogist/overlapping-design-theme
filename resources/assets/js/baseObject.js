@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
-  console.log("baseObject.js test");
-  
+  window.BASEOBJECT = {
+    nav: {},
+    buttons: {},
+    homeCarousel: {}
+  }
+
 })();
