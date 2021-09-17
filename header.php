@@ -10,6 +10,8 @@ if ( ! defined ("ABSPATH") ) {
 
 <!DOCTYPE html>
 
+<html <?php language_attributes(); ?>>
+
 <?php 
 
 wp_head(); ?>
