@@ -6,6 +6,9 @@ if ( ! defined ("ABSPATH") ) {
 }
 
 function overlap_theme_support() {
-    /* Thumbnails support */
-    add_theme_support("post-thumbnails");
+  //Thumbnails support
+  add_theme_support("post-thumbnails");
+  
+  //Document title tag support
+  add_theme_support( "title-tag" );
 }
