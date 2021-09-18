@@ -1,3 +1,156 @@
-.test-class {
-  background-color: red;
+@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
+body {
+  background-color: black;
+}
+body.active {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+._btn,
+.foot {
+  font-family: "Oswald", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+
+#navToggleButton {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 101;
+}
+#navToggleButton.active .toggle-line {
+  background-color: #333333;
+}
+#navToggleButton.active .toggle-line-1,
+#navToggleButton.active .toggle-line-3 {
+  top: 50%;
+  margin-top: -1px;
+}
+#navToggleButton.active .toggle-line-1 {
+  transform: rotate(45deg);
+}
+#navToggleButton.active .toggle-line-2 {
+  display: none;
+}
+#navToggleButton.active .toggle-line-3 {
+  transform: rotate(-45deg);
+}
+
+.toggle-line {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.toggle-line-1 {
+  top: 0;
+}
+
+.toggle-line-2 {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.toggle-line-3 {
+  bottom: 0;
+}
+
+._btn {
+  background-color: transparent;
+  border: 1px solid #ffbd00;
+  color: #ffbd00;
+  padding: 5px 0 5px 0;
+  letter-spacing: 1px;
+  text-indent: 1px;
+  text-align: center;
+  width: 110px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+}
+._btn:hover {
+  border-color: beige;
+  color: beige;
+  letter-spacing: 2px;
+  text-indent: 2px;
+  width: 115px;
+  transition-duration: 0.25s;
+}
+._btn._btn-invert {
+  border: 1px solid beige;
+  color: beige;
+}
+._btn._btn-invert:hover {
+  border-color: #ffbd00;
+  color: #ffbd00;
+}
+
+nav {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffbd00;
+}
+nav.active {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+nav ul {
+  display: block;
+  list-style-type: none;
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+}
+nav ul li {
+  display: block;
+}
+nav ul li a {
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-indent: 1px;
+  font-weight: bold;
+  display: block;
+  width: 250px;
+  font-size: 1rem;
+}
+nav ul li a:hover {
+  color: #ffbd00;
+  background-color: #000000;
+  opacity: 0.75;
+  letter-spacing: 2px;
+  text-indent: 2px;
+  transition-duration: 0.25s;
+  flex: 1.25rem;
 }

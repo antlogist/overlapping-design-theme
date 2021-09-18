@@ -16,3 +16,22 @@ if ( ! defined ("ABSPATH") ) {
 wp_head(); ?>
 
 <body <?php body_class(); ?>>
+
+<!--Nav toggle button-->
+<a href="#" id="navToggleButton">
+  <span class="toggle-line toggle-line-1"></span>
+  <span class="toggle-line toggle-line-2"></span>
+  <span class="toggle-line toggle-line-3"></span>
+</a>
+
+<!--Nav-->
+<nav id="navMain" class="align-items-center justify-content-center">
+  <ul>
+    <li><a class="py-2 px-3" href="#">Home</a></li>
+    <li><a class="py-2 px-3" href="#">About us</a></li>
+    <li><a class="py-2 px-3" href="#">Services</a></li>
+    <li><a class="py-2 px-3" href="#">Products</a></li>
+    <li><a class="py-2 px-3" href="#">Process</a></li>
+    <li><a class="py-2 px-3" href="#">Contact</a></li>
+  </ul>
+</nav>
