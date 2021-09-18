@@ -89,7 +89,7 @@ h5 {
   font-size: 0.85rem;
   font-weight: bold;
   text-transform: uppercase;
-  display: block;
+  display: inline-block;
   cursor: pointer;
 }
 ._btn:hover {
@@ -99,6 +99,12 @@ h5 {
   text-indent: 2px;
   width: 115px;
   transition-duration: 0.25s;
+}
+._btn:hover._btn-left {
+  margin-left: -5px;
+}
+._btn:hover._btn-right {
+  margin-right: -5px;
 }
 ._btn._btn-invert {
   border: 1px solid beige;
@@ -160,4 +166,170 @@ nav ul li a:hover {
 }
 #frontPageCarousel .carousel-item {
   background-color: black;
+}
+
+.figures-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+@media (min-width: 2632px) {
+  .figures-wrapper {
+    height: 80%;
+    top: 20%;
+  }
+}
+
+.figure {
+  display: block;
+  position: absolute;
+}
+
+.figure-1 {
+  background-color: #ffbd00;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 11;
+  height: 950px;
+  width: 150px;
+  margin-left: -75px;
+  top: 25px;
+  left: 50%;
+}
+@media (min-width: 768px) {
+  .figure-1 {
+    height: 768px;
+    width: 200px;
+    margin-left: -150px;
+    top: 50px;
+    left: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .figure-1 {
+    height: 768px;
+    width: 250px;
+    margin-left: -175px;
+    top: 75px;
+  }
+}
+
+.figure-2 {
+  background-color: beige;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 11;
+  height: 300px;
+  width: 300px;
+  margin-left: -150px;
+  top: 100px;
+  left: 50%;
+}
+@media (min-width: 768px) {
+  .figure-2 {
+    height: 350px;
+    width: 350px;
+    margin-left: -350px;
+    top: 150px;
+    left: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .figure-2 {
+    height: 450px;
+    width: 450px;
+    margin-left: -450px;
+    top: 175px;
+  }
+}
+.figure-2 .logo-wrapper {
+  text-align: center;
+  padding: 25px;
+  height: 100%;
+}
+.figure-2 .logo-wrapper .logo {
+  width: 150px;
+  margin-top: -25px;
+}
+@media (min-width: 768px) {
+  .figure-2 .logo-wrapper .logo {
+    margin-top: 0;
+    width: 180px;
+  }
+}
+@media (min-width: 1024px) {
+  .figure-2 .logo-wrapper .logo {
+    margin-top: 0;
+    width: 250px;
+  }
+}
+.figure-2 .logo-wrapper .tagline {
+  letter-spacing: 2px;
+  text-indent: 2px;
+  margin-top: -20px;
+}
+.figure-2 .logo-wrapper ._btn:hover {
+  border-color: #333333;
+  color: #333333;
+}
+.figure-2 .logo-wrapper ._btn-invert {
+  border: 1px solid #333333;
+  color: #333333;
+}
+.figure-2 .logo-wrapper ._btn-invert:hover {
+  border-color: #ffbd00;
+  color: #ffbd00;
+}
+
+.figure-3 {
+  background-color: #333333;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 11;
+  height: 430px;
+  width: 300px;
+  margin-left: -150px;
+  top: 450px;
+  left: 50%;
+}
+@media (min-width: 768px) {
+  .figure-3 {
+    height: 400px;
+    width: 400px;
+    margin-left: -50px;
+    top: 400px;
+    left: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .figure-3 {
+    height: 425px;
+    width: 425px;
+    margin-left: -50px;
+    top: 450px;
+  }
+}
+.figure-3 .contact-wrapper {
+  padding: 35px;
+  height: 100%;
+}
+.figure-3 .contact-wrapper .tagline {
+  letter-spacing: 1px;
+  color: beige;
+}
+.figure-3 .contact-wrapper .contact {
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: beige;
+}
+.figure-3 .contact-wrapper .contact a {
+  letter-spacing: 0;
+  color: beige;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+.figure-3 .contact-wrapper .contact a:hover {
+  letter-spacing: 1px;
+  text-indent: 1px;
+  transition-duration: 0.25s;
+  color: #ffbd00;
 }
