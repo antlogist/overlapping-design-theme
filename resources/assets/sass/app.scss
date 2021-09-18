@@ -181,3 +181,11 @@ nav {
     }
   }
 }
+
+#frontPageCarousel {
+  border-bottom: 1px solid beige;
+
+  .carousel-item {
+    background-color: black;
+  }
+}
