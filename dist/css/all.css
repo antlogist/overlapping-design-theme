@@ -1,3 +1,29 @@
-.test-class {
-  background-color: red;
+@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
+body {
+  background-color: black;
+}
+body.active {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+._btn,
+.foot {
+  font-family: "Oswald", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
 }
