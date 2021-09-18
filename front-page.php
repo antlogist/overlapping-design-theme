@@ -41,13 +41,19 @@ get_header(); ?>
     <div class="contact-wrapper d-flex align-items-center">
       <div class="mt-3">
         <h3 class="tagline text-uppercase">Call Us</h3>
-        <h5 class="contact">Phone: <a href="tel:1247 5678">1247 5678</a></h5>
-
+        <h5 class="contact" >Phone: <a id="phoneHref" href="tel:<?php echo get_theme_mod('phone');?>"><span id="phone"><?php echo get_theme_mod('phone'); ?></span></a></h5>
+        <script>
+          (function() {
+            const phone = "<?php echo get_theme_mod('phone'); ?>";
+            const el = document.getElementById("phoneHref");
+            el.setAttribute('href', phone.replace(/\s/g, ''));
+          })();
+        </script>
         <h3 class="tagline text-uppercase mt-4">Address</h3>
-        <h5 class="contact">251 Beibitshilik Street, New Chum QLD 1234</h5>
+        <h5 class="contact" id="address"><?php echo get_theme_mod('address'); ?></h5>
 
         <h3 class="tagline text-uppercase mt-4">Postal Address</h3>
-        <h5 class="contact">251 Beibitshilik Street, New Chum QLD 1234</h5>
+        <h5 class="contact" id="postalAddress"><?php echo get_theme_mod('postal_address'); ?></h5>
         <div class="button-wrapper">
           <button class="_btn _btn-left _btn-invert mt-3" id="openModalMail">Send Mail</button>
           <button class="_btn _btn-right mt-3" id="openModalMap">Open Map</button>

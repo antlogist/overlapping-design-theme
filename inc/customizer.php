@@ -34,5 +34,50 @@ function overlap_customize_register( $wp_customize ) {
       'section'=>'front_page_section',
       'settings'=>'front_page_tagline',
   ));
+  
+  //Phone setting
+  $wp_customize->add_setting('phone',array(
+      'default'=>'1234 5678',
+      'sanitize_callback' => 'sanitize_text_field',
+      'transport' => 'postMessage'
+  ));
+
+  //Phone control
+  $wp_customize->add_control('phone_control',array(
+      'label'=>'Phone Number',
+      'type'=>'text',
+      'section'=>'front_page_section',
+      'settings'=>'phone',
+  ));
+  
+  //Address setting
+  $wp_customize->add_setting('address',array(
+      'default'=>'251 Beibitshilik Street, New Chum QLD 1234',
+      'sanitize_callback' => 'wp_kses_post',
+      'transport' => 'postMessage'
+  ));
+
+  //Address control
+  $wp_customize->add_control('address_control',array(
+      'label'=>'Address',
+      'type'=>'textarea',
+      'section'=>'front_page_section',
+      'settings'=>'address',
+  ));
+  
+  //Postal address setting
+  $wp_customize->add_setting('postal_address',array(
+      'default'=>'251 Beibitshilik Street, New Chum QLD 1234',
+      'sanitize_callback' => 'wp_kses_post',
+      'transport' => 'postMessage'
+  ));
+
+  //Postal address control
+  $wp_customize->add_control('postal_address_control',array(
+      'label'=>'Postal Address',
+      'type'=>'textarea',
+      'section'=>'front_page_section',
+      'settings'=>'postal_address',
+  ));
 }
 
