@@ -1,7 +1,7 @@
 <?php 
 
 //Exit if accessed directly
-if ( ! defined ("ABSPATH") ) {
+if ( ! defined ('ABSPATH') ) {
   exit;
 }
 get_header(); ?>
@@ -29,7 +29,7 @@ get_header(); ?>
     <div class="logo-wrapper d-flex align-items-center justify-content-center">
       <div>
         <img src="https://dummyimage.com/512x512/ffbd00/000.jpg" class="logo" alt="logo">
-        <h2 class="tagline text-uppercase">Lorem Ipsum<br>Dolor sit Amet</h2>
+        <h2 class="tagline text-uppercase" id="tagline"><?php echo get_theme_mod('front_page_tagline'); ?></h2>
         <div class="button-wrapper">
           <button class="_btn _btn-left _btn-invert" id="openModalAbout">About Us</button>
           <button class="_btn _btn-right mt-3" id="openModalProducts">Products</button>

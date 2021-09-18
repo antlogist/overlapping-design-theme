@@ -24,3 +24,6 @@ add_action( 'wp_enqueue_scripts', 'overlap_styles_and_scripts' );
 
 //Theme customizer
 add_action( 'customize_register', 'overlap_customize_register' );
+
+//Theme customizer script
+add_action( 'customize_preview_init', 'overlap_customizer_script' );

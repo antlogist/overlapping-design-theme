@@ -21,10 +21,10 @@ function overlap_customize_register( $wp_customize ) {
   ));
 
   //Front-page tagline setting
-  $wp_customize->add_setting('front_page_tagline_setting',array(
+  $wp_customize->add_setting('front_page_tagline',array(
       'default'=>'Lorem Ipsum<br>Dolor Sit Amet',
       'sanitize_callback' => 'wp_kses_post',
-      'transport' => 'refresh'
+      'transport' => 'postMessage'
   ));
 
   //Front-page tagline control
@@ -32,7 +32,7 @@ function overlap_customize_register( $wp_customize ) {
       'label'=>'Front Page Tagline',
       'type'=>'textarea',
       'section'=>'front_page_section',
-      'settings'=>'front_page_tagline_setting',
+      'settings'=>'front_page_tagline',
   ));
 }
 
