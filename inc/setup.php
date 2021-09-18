@@ -20,3 +20,18 @@ function overlap_theme_support() {
   //Menus
   add_theme_support("menus");
 }
+
+// Dynamic body id
+function body_id() { 
+  if (is_front_page()) {
+    return ' id="frontPage"';
+  } elseif (is_home()) {
+    return ' id="homePage"';
+  } elseif (is_single()) {
+    return ' id="singlePage"';
+  } elseif (is_search()) {
+    return ' id="searchPage"';
+  } elseif (is_archive()) {
+    return ' id="archivePage"';
+  }
+}

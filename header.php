@@ -15,7 +15,7 @@ if ( ! defined ("ABSPATH") ) {
 
 wp_head(); ?>
 
-<body <?php body_class(); ?>>
+<body <?php echo body_id(); body_class(); ?>>
 
 <!--Nav toggle button-->
 <a href="#" id="navToggleButton">
