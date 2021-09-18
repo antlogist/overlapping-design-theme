@@ -1,6 +1,24 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./resources/assets/js/baseObject.js":
+/*!*******************************************!*\
+  !*** ./resources/assets/js/baseObject.js ***!
+  \*******************************************/
+/***/ (() => {
+
+(function () {
+  "use strict";
+
+  window.BASEOBJECT = {
+    nav: {},
+    buttons: {},
+    homeCarousel: {}
+  };
+})();
+
+/***/ }),
+
 /***/ "./resources/assets/js/init.js":
 /*!*************************************!*\
   !*** ./resources/assets/js/init.js ***!
@@ -10,21 +28,41 @@
 (function () {
   "use strict";
 
-  console.log("init.js test");
+  BASEOBJECT.nav.toggleButton();
 })();
 
 /***/ }),
 
-/***/ "./resources/assets/js/objects.js":
+/***/ "./resources/assets/js/nav/nav.js":
 /*!****************************************!*\
-  !*** ./resources/assets/js/objects.js ***!
+  !*** ./resources/assets/js/nav/nav.js ***!
   \****************************************/
 /***/ (() => {
 
 (function () {
   "use strict";
 
-  console.log("objects.js test");
+  BASEOBJECT.nav.toggleButton = function () {
+    var button = document.getElementById("navToggleButton");
+    var navMain = document.getElementById("navMain");
+    var body = document.body;
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      switch (navMain.classList.contains("active")) {
+        case true:
+          navMain.classList.remove("active");
+          button.classList.remove("active");
+          body.classList.remove("active");
+          break;
+
+        default:
+          navMain.classList.add("active");
+          button.classList.add("active");
+          body.classList.add("active");
+      }
+    });
+  };
 })();
 
 /***/ }),
@@ -179,7 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["dist/css/all"], () => (__webpack_require__("./resources/assets/js/objects.js")))
+/******/ 	__webpack_require__.O(undefined, ["dist/css/all"], () => (__webpack_require__("./resources/assets/js/baseObject.js")))
+/******/ 	__webpack_require__.O(undefined, ["dist/css/all"], () => (__webpack_require__("./resources/assets/js/nav/nav.js")))
 /******/ 	__webpack_require__.O(undefined, ["dist/css/all"], () => (__webpack_require__("./resources/assets/js/init.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/css/all"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
