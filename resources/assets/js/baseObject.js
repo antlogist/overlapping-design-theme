@@ -4,7 +4,7 @@
   window.BASEOBJECT = {
     nav: {},
     buttons: {},
-    homeCarousel: {}
+    frontPageCarousel: {}
   }
 
 })();

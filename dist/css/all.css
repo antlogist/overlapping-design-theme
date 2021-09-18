@@ -154,3 +154,10 @@ nav ul li a:hover {
   transition-duration: 0.25s;
   flex: 1.25rem;
 }
+
+#frontPageCarousel {
+  border-bottom: 1px solid beige;
+}
+#frontPageCarousel .carousel-item {
+  background-color: black;
+}
