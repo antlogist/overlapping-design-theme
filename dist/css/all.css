@@ -77,6 +77,38 @@ h5 {
   bottom: 0;
 }
 
+._btn {
+  background-color: transparent;
+  border: 1px solid #ffbd00;
+  color: #ffbd00;
+  padding: 5px 0 5px 0;
+  letter-spacing: 1px;
+  text-indent: 1px;
+  text-align: center;
+  width: 110px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+}
+._btn:hover {
+  border-color: beige;
+  color: beige;
+  letter-spacing: 2px;
+  text-indent: 2px;
+  width: 115px;
+  transition-duration: 0.25s;
+}
+._btn._btn-invert {
+  border: 1px solid beige;
+  color: beige;
+}
+._btn._btn-invert:hover {
+  border-color: #ffbd00;
+  color: #ffbd00;
+}
+
 nav {
   display: none;
   position: fixed;
