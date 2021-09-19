@@ -7,6 +7,8 @@ import Modal from "../Classes/Modal.js";
     const modal = new Modal();
     let template = "";
     body.addEventListener("click", function (e) {
+      
+      //About
       if (e.target.id === "openModalAbout") {
         template = "";
         template = `
@@ -21,6 +23,66 @@ import Modal from "../Classes/Modal.js";
             </div>
           </div>`;
 
+        modal.renderTemplate(template);
+      }
+      
+      //Mail
+      if (e.target.id === "openModalMail") {
+        template = "";
+        template = `
+          <div class="container-fluid container-xxl" id="messageContainer">
+            <div class="contact-form-wrapper py-5">
+              <h2 class="_modal-title">Contact form</h2>
+              <form class="row needs-validation" novalidate>
+                <div class="col-12 col-md-6">
+                  <div class="mb-3">
+                    <label for="inputName" class="form-label">Name*</label>
+                    <input name="name" type="text" class="form-control" id="inputName" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputPhoneNumber" class="form-label">Phone*</label>
+                    <input name="phone" type="text" class="form-control" id="inputPhoneNumber" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email address*</label>
+                    <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputSuburb" class="form-label">Suburb</label>
+                    <input name="suburb" type="text" class="form-control" id="inputSuburb">
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="mb-3">
+                    <label for="inputMessage" class="form-label">Message*</label>
+                    <textarea name="message" class="form-control" id="inputMessage" required></textarea>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+
+                  <div class="button-wrapper">
+                    <button class="_btn text-uppercase" id="buttonSendMail">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>`;
+        
         modal.renderTemplate(template);
       }
     });
