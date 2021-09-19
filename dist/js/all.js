@@ -2165,7 +2165,14 @@ __webpack_require__.r(__webpack_exports__);
       //About
       if (e.target.id === "openModalAbout") {
         template = "";
-        template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"paragraphs-wrapper py-5\">\n              <h2 class=\"_modal-title\">About Us</h2>\n              Content...\n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./about.php\" class=\"_btn d-inline-block text-uppercase\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block text-uppercase\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>";
+        template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"paragraphs-wrapper py-5\">\n              <h2 class=\"_modal-title\">About Us</h2>\n              Content...\n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./about.php\" class=\"_btn d-inline-block\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>";
+        modal.renderTemplate(template);
+      } //Products
+
+
+      if (e.target.id === "openModalProducts") {
+        template = "";
+        template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"products-info py-5\">\n              <h2 class=\"_modal-title\">Products</h2>\n              Content... \n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./products.php\" class=\"_btn d-inline-block\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>";
         modal.renderTemplate(template);
       } //Mail
 
