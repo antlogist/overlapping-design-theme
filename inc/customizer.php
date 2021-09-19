@@ -81,18 +81,33 @@ function overlap_customize_register( $wp_customize ) {
   ));
   
   //About link setting
-  $wp_customize->add_setting('about_link',array(
+  $wp_customize->add_setting('about_page_id',array(
       'default'=>'',
       'sanitize_callback' => 'sanitize_text_field',
       'transport' => 'postMessage'
   ));
 
   //About link control
-  $wp_customize->add_control('about_link_control',array(
-      'label'=>'Postal Address',
+  $wp_customize->add_control('about_page_id_control',array(
+      'label'=>'About Page',
       'type'=>'dropdown-pages',
       'section'=>'front_page_section',
-      'settings'=>'about_link',
+      'settings'=>'about_page_id',
+  ));
+  
+  //Products link setting
+  $wp_customize->add_setting('products_page_id',array(
+      'default'=>'',
+      'sanitize_callback' => 'sanitize_text_field',
+      'transport' => 'postMessage'
+  ));
+
+  //Products link control
+  $wp_customize->add_control('products_page_id_control',array(
+      'label'=>'Products Page',
+      'type'=>'dropdown-pages',
+      'section'=>'front_page_section',
+      'settings'=>'products_page_id',
   ));
 }
 

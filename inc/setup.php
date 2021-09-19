@@ -5,6 +5,12 @@ if ( ! defined ("ABSPATH") ) {
   exit;
 }
 
+function register_my_session(){
+    if( ! session_id() ) {
+        session_start();
+    }
+}
+
 function overlap_theme_support() {
   //Thumbnails support
   add_theme_support("post-thumbnails");

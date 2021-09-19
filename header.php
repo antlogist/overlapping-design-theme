@@ -5,6 +5,9 @@ if ( ! defined ("ABSPATH") ) {
   exit;
 }
 
+include( get_template_directory() . '/inc/Classes/CSRFToken.php' );
+$token = CSRFToken::_token();
+
 ?>
 
 <!DOCTYPE html>
@@ -38,4 +41,5 @@ wp_head(); ?>
 
 <script>
   const baseUrl = "<?php echo get_site_url(); ?>";
+  const token = "<?php echo $token; ?>";
 </script>

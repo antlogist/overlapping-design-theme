@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+include_once("../Classes/CSRFToken.php");
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -8,6 +12,10 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+if (!CSRFToken::verifyCSRFToken($_POST["token"], true)) {
+    echo json_encode(["message"=> "Expired token. Reload the page, please."]);
+    exit;
+}
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
