@@ -79,5 +79,20 @@ function overlap_customize_register( $wp_customize ) {
       'section'=>'front_page_section',
       'settings'=>'postal_address',
   ));
+  
+  //About link setting
+  $wp_customize->add_setting('about_link',array(
+      'default'=>'',
+      'sanitize_callback' => 'sanitize_text_field',
+      'transport' => 'postMessage'
+  ));
+
+  //About link control
+  $wp_customize->add_control('about_link_control',array(
+      'label'=>'Postal Address',
+      'type'=>'dropdown-pages',
+      'section'=>'front_page_section',
+      'settings'=>'about_link',
+  ));
 }
 
