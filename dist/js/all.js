@@ -2151,7 +2151,9 @@ var __webpack_exports__ = {};
   !*** ./resources/assets/js/buttons/buttons.js ***!
   \************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Classes_Modal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Classes/Modal.js */ "./resources/assets/js/Classes/Modal.js");
+/* harmony import */ var _Classes_Request_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Classes/Request.js */ "./resources/assets/js/Classes/Request.js");
+/* harmony import */ var _Classes_Modal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Classes/Modal.js */ "./resources/assets/js/Classes/Modal.js");
+
 
 
 (function () {
@@ -2159,16 +2161,25 @@ __webpack_require__.r(__webpack_exports__);
 
   BASEOBJECT.buttons.init = function () {
     var body = document.body;
-    var modal = new _Classes_Modal_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    var modal = new _Classes_Modal_js__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    var request = new _Classes_Request_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
     var template = "";
     body.addEventListener("click", function (e) {
       //About
       if (e.target.id === "openModalAbout") {
-        template = "";
-        template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"paragraphs-wrapper py-5\">\n              <h2 class=\"_modal-title\">About Us</h2>\n              Content...\n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./about.php\" class=\"_btn d-inline-block\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>";
-        modal.renderTemplate(template);
-      } //Products
+        request.get("".concat(baseUrl, "/wp-json/wp/v2/pages"), function (err, resp) {
+          if (err) {
+            console.log(err);
+            return;
+          }
 
+          template = "";
+          template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"paragraphs-wrapper py-5\">\n              <h2 class=\"_modal-title\">About Us</h2>\n              Content...\n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./about.php\" class=\"_btn d-inline-block\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>";
+          modal.renderTemplate(template);
+        });
+      }
+
+      ; //Products
 
       if (e.target.id === "openModalProducts") {
         template = "";

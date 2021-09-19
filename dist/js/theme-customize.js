@@ -28,6 +28,11 @@
       $('#postalAddress').html(newval);
     });
   });
+  wp.customize('about_link', function (value) {
+    value.bind(function (newval) {
+      $('#openModalAbout').data('link', newval);
+    });
+  });
 })(jQuery);
 
 /***/ }),

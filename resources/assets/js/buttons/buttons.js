@@ -1,3 +1,4 @@
+import Request from "../Classes/Request.js";
 import Modal from "../Classes/Modal.js";
 
 (function () {
@@ -5,13 +6,21 @@ import Modal from "../Classes/Modal.js";
   BASEOBJECT.buttons.init = function () {
     const body = document.body;
     const modal = new Modal();
+    const request = new Request();
     let template = "";
     body.addEventListener("click", function (e) {
-      
+
       //About
       if (e.target.id === "openModalAbout") {
-        template = "";
-        template = `
+
+        request.get(`${baseUrl}/wp-json/wp/v2/pages`, (err, resp) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+
+          template = "";
+          template = `
           <div class="container-fluid container-xxl">
             <div class="paragraphs-wrapper py-5">
               <h2 class="_modal-title">About Us</h2>
@@ -23,14 +32,15 @@ import Modal from "../Classes/Modal.js";
             </div>
           </div>`;
 
-        modal.renderTemplate(template);
-      }
-      
+          modal.renderTemplate(template);
+        });
+      };
+
       //Products
       if (e.target.id === "openModalProducts") {
-        
-          template = "";
-          template = `
+
+        template = "";
+        template = `
           <div class="container-fluid container-xxl">
             <div class="products-info py-5">
               <h2 class="_modal-title">Products</h2>
@@ -41,10 +51,10 @@ import Modal from "../Classes/Modal.js";
               </div>
             </div>
           </div>`;
-          
-          modal.renderTemplate(template);
+
+        modal.renderTemplate(template);
       }
-      
+
       //Mail
       if (e.target.id === "openModalMail") {
         template = "";
@@ -101,7 +111,7 @@ import Modal from "../Classes/Modal.js";
               </form>
             </div>
           </div>`;
-        
+
         modal.renderTemplate(template);
       }
     });

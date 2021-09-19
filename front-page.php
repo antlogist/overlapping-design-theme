@@ -31,7 +31,7 @@ get_header(); ?>
         <img src="https://dummyimage.com/512x512/ffbd00/000.jpg" class="logo" alt="logo">
         <h2 class="tagline text-uppercase" id="tagline"><?php echo get_theme_mod('front_page_tagline'); ?></h2>
         <div class="button-wrapper">
-          <button class="_btn _btn-left _btn-invert" id="openModalAbout">About Us</button>
+          <button data-link="<?php echo get_theme_mod('about_link'); ?>" class="_btn _btn-left _btn-invert" id="openModalAbout">About Us</button>
           <button class="_btn _btn-right mt-3" id="openModalProducts">Products</button>
         </div>
       </div>
