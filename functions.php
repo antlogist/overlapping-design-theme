@@ -15,6 +15,9 @@ include( get_template_directory() . '/inc/enqueue.php' );
 //Theme customizer
 include( get_template_directory() . '/inc/customizer.php');
 
+//REST menu
+include( get_template_directory() . '/inc/REST/rest_menu.php');
+
 /*===HOOKS===*/
 //Theme features
 add_action('after_setup_theme', 'overlap_theme_support');
@@ -30,3 +33,6 @@ add_action( 'customize_preview_init', 'overlap_customizer_script' );
 
 //Session start
 add_action('init', 'register_my_session');
+
+//REST menu
+add_action( 'rest_api_init', 'overlap_menu' );
