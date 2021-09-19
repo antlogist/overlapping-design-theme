@@ -28,7 +28,7 @@ var Mail = /*#__PURE__*/function () {
     this.headers = {
       "Content-Type": "application/x-www-form-urlencoded"
     };
-    this.url = "".concat(baseUrl, "wp-content/themes/overlapping-design-theme/inc/mail/mail.php");
+    this.url = "".concat(baseUrl, "/wp-content/themes/overlapping-design-theme/inc/mail/mail.php");
   }
 
   _createClass(Mail, [{

@@ -4,7 +4,7 @@ export default class Mail {
 
   constructor() {
     this.headers = { "Content-Type": "application/x-www-form-urlencoded" };
-    this.url = `${baseUrl}wp-content/themes/overlapping-design-theme/inc/mail/mail.php`;
+    this.url = `${baseUrl}/wp-content/themes/overlapping-design-theme/inc/mail/mail.php`;
   }
   
   getHeaders() {
