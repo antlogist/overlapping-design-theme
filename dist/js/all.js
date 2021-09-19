@@ -2167,14 +2167,15 @@ __webpack_require__.r(__webpack_exports__);
     body.addEventListener("click", function (e) {
       //About
       if (e.target.id === "openModalAbout") {
-        request.get("".concat(baseUrl, "/wp-json/wp/v2/pages"), function (err, resp) {
+        var pageId = document.getElementById("openModalAbout").dataset.link;
+        request.get("".concat(baseUrl, "/wp-json/wp/v2/pages/").concat(pageId), function (err, resp) {
           if (err) {
             console.log(err);
             return;
           }
 
           template = "";
-          template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"paragraphs-wrapper py-5\">\n              <h2 class=\"_modal-title\">About Us</h2>\n              Content...\n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./about.php\" class=\"_btn d-inline-block\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>";
+          template = "\n          <div class=\"container-fluid container-xxl\">\n            <div class=\"paragraphs-wrapper py-5\">\n              <h2 class=\"_modal-title\">".concat(resp.title.rendered, "</h2>\n              ").concat(resp.content.rendered, "\n              <div class=\"buttons-wrapper w-100 mt-3\">\n                <a href=\"./about.php\" class=\"_btn d-inline-block\">More...</a>\n                <a href=\"#\" class=\"_btn _btn-invert _btn-right d-inline-block\" id=\"modalCloseBottom\">Close</a>\n              </div>\n            </div>\n          </div>");
           modal.renderTemplate(template);
         });
       }
