@@ -35,3 +35,7 @@ wp_head(); ?>
     <li><a class="py-2 px-3" href="#">Contact</a></li>
   </ul>
 </nav>
+
+<script>
+  const baseUrl = "<?php echo get_site_url(); ?>";
+</script>

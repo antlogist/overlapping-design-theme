@@ -11,5 +11,6 @@ mix.js([
   "resources/assets/js/baseObject.js",
   "resources/assets/js/nav/nav.js",
   "resources/assets/js/carousel/carousel.js",
+  "resources/assets/js/buttons/buttons.js",
   "resources/assets/js/init.js"
 ], "dist/js/all.js");
