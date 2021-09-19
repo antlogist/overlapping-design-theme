@@ -16,7 +16,7 @@ import Modal from "../Classes/Modal.js";
               Content...
               <div class="buttons-wrapper w-100 mt-3">
                 <a href="./about.php" class="_btn d-inline-block text-uppercase">More...</a>
-                <a href="#" class="_btn _btn-invert d-inline-block text-uppercase" id="modalCloseBottom">Close</a>
+                <a href="#" class="_btn _btn-invert _btn-right d-inline-block text-uppercase" id="modalCloseBottom">Close</a>
               </div>
             </div>
           </div>`;
