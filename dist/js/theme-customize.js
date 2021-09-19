@@ -28,9 +28,14 @@
       $('#postalAddress').html(newval);
     });
   });
-  wp.customize('about_link', function (value) {
+  wp.customize('about_page_id', function (value) {
     value.bind(function (newval) {
-      $('#openModalAbout').data('link', newval);
+      $('#openModalAbout').data('page_id', newval);
+    });
+  });
+  wp.customize('products_page_id', function (value) {
+    value.bind(function (newval) {
+      $('#openModalProducts').data('page_id', newval);
     });
   });
 })(jQuery);

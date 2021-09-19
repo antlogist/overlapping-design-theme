@@ -13,7 +13,7 @@ import Modal from "../Classes/Modal.js";
       //About
       if (e.target.id === "openModalAbout") {
 
-        const pageId = document.getElementById("openModalAbout").dataset.link;
+        const pageId = document.getElementById("openModalAbout").dataset.page_id;
         request.get(`${baseUrl}/wp-json/wp/v2/pages/${pageId}`, (err, resp) => {
           if (err) {
             console.log(err);
@@ -40,12 +40,19 @@ import Modal from "../Classes/Modal.js";
       //Products
       if (e.target.id === "openModalProducts") {
 
-        template = "";
-        template = `
+        const pageId = document.getElementById("openModalProducts").dataset.page_id;
+        request.get(`${baseUrl}/wp-json/wp/v2/pages/${pageId}`, (err, resp) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+
+          template = "";
+          template = `
           <div class="container-fluid container-xxl">
             <div class="products-info py-5">
-              <h2 class="_modal-title">Products</h2>
-              Content... 
+              <h2 class="_modal-title">${resp.title.rendered}</h2>
+              ${resp.content.rendered}
               <div class="buttons-wrapper w-100 mt-3">
                 <a href="./products.php" class="_btn d-inline-block">More...</a>
                 <a href="#" class="_btn _btn-invert _btn-right d-inline-block" id="modalCloseBottom">Close</a>
@@ -53,7 +60,9 @@ import Modal from "../Classes/Modal.js";
             </div>
           </div>`;
 
-        modal.renderTemplate(template);
+          modal.renderTemplate(template);
+
+        })
       }
 
       //Mail
