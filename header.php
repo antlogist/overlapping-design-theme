@@ -28,16 +28,7 @@ wp_head(); ?>
 </a>
 
 <!--Nav-->
-<nav id="navMain" class="align-items-center justify-content-center">
-  <ul>
-    <li><a class="py-2 px-3" href="#">Home</a></li>
-    <li><a class="py-2 px-3" href="#">About us</a></li>
-    <li><a class="py-2 px-3" href="#">Services</a></li>
-    <li><a class="py-2 px-3" href="#">Products</a></li>
-    <li><a class="py-2 px-3" href="#">Process</a></li>
-    <li><a class="py-2 px-3" href="#">Contact</a></li>
-  </ul>
-</nav>
+<nav id="navMain" class="align-items-center justify-content-center"></nav>
 
 <script>
   const baseUrl = "<?php echo get_site_url(); ?>";

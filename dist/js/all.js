@@ -2087,11 +2087,17 @@ var __webpack_exports__ = {};
 })();
 })();
 
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
+var __webpack_exports__ = {};
 /*!****************************************!*\
   !*** ./resources/assets/js/nav/nav.js ***!
   \****************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Classes_Request_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Classes/Request.js */ "./resources/assets/js/Classes/Request.js");
+
+
 (function () {
   "use strict";
 
@@ -2099,21 +2105,35 @@ var __webpack_exports__ = {};
     var button = document.getElementById("navToggleButton");
     var navMain = document.getElementById("navMain");
     var body = document.body;
+    var request = new _Classes_Request_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
     button.addEventListener("click", function (e) {
       e.preventDefault();
+      request.get("".concat(baseUrl, "/wp-json/menus/v1/menu"), function (err, resp) {
+        if (err) {
+          console.log(err);
+          return;
+        }
 
-      switch (navMain.classList.contains("active")) {
-        case true:
-          navMain.classList.remove("active");
-          button.classList.remove("active");
-          body.classList.remove("active");
-          break;
+        var ul = document.createElement("ul");
+        resp.map(function (item) {
+          var navItem = "\n            <li>\n              <a href=\"".concat(item.url, "\" class=\"py-2 px-3\">").concat(item.title, "</a>\n            </li>\n          ");
+          ul.insertAdjacentHTML("beforeEnd", navItem);
+        });
+        navMain.appendChild(ul);
 
-        default:
-          navMain.classList.add("active");
-          button.classList.add("active");
-          body.classList.add("active");
-      }
+        switch (navMain.classList.contains("active")) {
+          case true:
+            navMain.classList.remove("active");
+            button.classList.remove("active");
+            body.classList.remove("active");
+            break;
+
+          default:
+            navMain.classList.add("active");
+            button.classList.add("active");
+            body.classList.add("active");
+        }
+      });
     });
   };
 })();
