@@ -22,7 +22,6 @@ export default class Mail {
         console.log(err);
         return;
       }
-      console.log(resp);
       
       const message = document.getElementById(id);
       const parent = message.parentElement;

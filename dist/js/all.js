@@ -48,7 +48,6 @@ var Mail = /*#__PURE__*/function () {
           return;
         }
 
-        console.log(resp);
         var message = document.getElementById(id);
         var parent = message.parentElement;
         parent.classList.add("w-100", "h-100", "d-flex");
