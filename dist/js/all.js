@@ -2114,24 +2114,25 @@ __webpack_require__.r(__webpack_exports__);
           return;
         }
 
-        var ul = document.createElement("ul");
-        resp.map(function (item) {
-          var navItem = "\n            <li>\n              <a href=\"".concat(item.url, "\" class=\"py-2 px-3\">").concat(item.title, "</a>\n            </li>\n          ");
-          ul.insertAdjacentHTML("beforeEnd", navItem);
-        });
-        navMain.appendChild(ul);
-
         switch (navMain.classList.contains("active")) {
           case true:
             navMain.classList.remove("active");
             button.classList.remove("active");
             body.classList.remove("active");
+            document.getElementById("navMainUl").remove();
             break;
 
           default:
             navMain.classList.add("active");
             button.classList.add("active");
             body.classList.add("active");
+            var ul = document.createElement("ul");
+            ul.id = "navMainUl";
+            resp.map(function (item) {
+              var navItem = "\n                <li>\n                  <a href=\"".concat(item.url, "\" class=\"py-2 px-3\">").concat(item.title, "</a>\n                </li>\n              ");
+              ul.insertAdjacentHTML("beforeEnd", navItem);
+            });
+            navMain.appendChild(ul);
         }
       });
     });
