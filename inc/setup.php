@@ -11,6 +11,10 @@ function register_my_session(){
     }
 }
 
+function add_viewport_meta_tag() {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+}
+
 function overlap_theme_support() {
   //Thumbnails support
   add_theme_support("post-thumbnails");
